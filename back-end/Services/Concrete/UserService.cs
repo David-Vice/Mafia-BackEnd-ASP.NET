@@ -54,7 +54,8 @@ namespace back_end.Services
             itemToUpdate.Id = id;
             itemToUpdate.Name = user.Name;
             itemToUpdate.Email = user.Email;
-            itemToUpdate.Password = user.Password;
+            itemToUpdate.PasswordHash = user.PasswordHash;
+            itemToUpdate.PasswordSalt = user.PasswordSalt;
             itemToUpdate.Surname = user.Surname;
             itemToUpdate.Username = user.Username;
 

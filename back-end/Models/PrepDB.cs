@@ -24,7 +24,6 @@
                         Name = "User1",
                         Surname = "Userr1",
                         Email = "a@mail.com",
-                        Password = "123",
                         Username = "User1"
 
                     }
