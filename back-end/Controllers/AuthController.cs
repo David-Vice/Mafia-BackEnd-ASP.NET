@@ -39,8 +39,5 @@ namespace back_end.Controllers
             return Ok("Success");
           //  return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
-
-       
-
     }
 }
