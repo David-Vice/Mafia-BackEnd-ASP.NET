@@ -5,6 +5,11 @@ namespace back_end.Models
 {
     public partial class User
     {
+        public User()
+        {
+            GameSessionUsers = new HashSet<GameSessionUser>();
+        }
+
         public int Id { get; set; }
         public string? Name { get; set; }
         public string? Surname { get; set; }
@@ -12,5 +17,7 @@ namespace back_end.Models
         public string? Username { get; set; }
         public byte[]? PasswordHash { get; set; }
         public byte[]? PasswordSalt { get; set; }
+
+        public virtual ICollection<GameSessionUser> GameSessionUsers { get; set; }
     }
 }
