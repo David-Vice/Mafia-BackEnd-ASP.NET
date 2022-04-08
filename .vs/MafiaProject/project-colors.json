@@ -3,14 +3,24 @@
   "ProjectMap": {
     "938ef5c9-02d5-4f7e-a55b-ee146b00393b": {
       "ProjectGuid": "938ef5c9-02d5-4f7e-a55b-ee146b00393b",
-      "DisplayName": "back-end",
+      "DisplayName": "back-end2",
       "ColorIndex": 0
     },
     "9a1e6f46-57b0-42ce-bfa3-b289856eed95": {
       "ProjectGuid": "9a1e6f46-57b0-42ce-bfa3-b289856eed95",
       "DisplayName": "ToDoListApi",
       "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "53805281-058a-451b-be12-731f5b76c3ee": {
+      "ProjectGuid": "53805281-058a-451b-be12-731f5b76c3ee",
+      "DisplayName": "back-end",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
