@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace back_end.Models
 {
     public partial class GameResult
@@ -9,6 +11,6 @@ namespace back_end.Models
         public int? GameSessionUsersId { get; set; }
         public ulong IsWinner { get; set; }
 
-        public virtual GameSessionUser? GameSessionUsers { get; set; }
+        public virtual GameSessionUser GameSessionUsers { get; set; }
     }
 }

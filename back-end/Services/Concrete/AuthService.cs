@@ -1,4 +1,10 @@
 ﻿using back_end.Dtos;
+using back_end.Models;
+using back_end.Security;
+using back_end.Services.Abstract;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace back_end.Services.Concrete
 {
@@ -15,7 +21,7 @@ namespace back_end.Services.Concrete
         public async Task<int> Login(UserDto userDto)
         {
             IEnumerable<User> users = await _userService.GetAll();
-            User? user=users.Where(u=>u.Username.Equals(userDto.Username)).FirstOrDefault();
+            User user=users.Where(u=>u.Username.Equals(userDto.Username)).FirstOrDefault();
             if (user == null)
             {
                 return -1;

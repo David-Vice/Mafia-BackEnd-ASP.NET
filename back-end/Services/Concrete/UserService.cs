@@ -1,7 +1,12 @@
-﻿using back_end.Models;
+﻿using back_end.Data;
+using back_end.Models;
 using back_end.Services.Abstract;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace back_end.Services
+namespace back_end.Services.Concrete
 {
     public class UserService : IUserService
     {

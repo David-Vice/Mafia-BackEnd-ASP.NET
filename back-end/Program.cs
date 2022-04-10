@@ -1,49 +1,26 @@
-global using back_end.Data;
-global using Microsoft.EntityFrameworkCore;
-global using back_end.Models;
-global using back_end.Services;
-global using back_end.Services.Abstract;
-global using back_end.Security;
-global using back_end.Services.Concrete;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-builder.Services.AddDbContext<DataContext>(options =>
+namespace back_end
 {
-    //for local
-    //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-    //for remote
-    options.UseMySql(
-                builder.Configuration.GetConnectionString("MysqlConnection"),
-               new MariaDbServerVersion(new Version(10, 5,13))
-            );
-});
-builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
 
-builder.Services.AddScoped<IDataContext, DataContext>();
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IUserService, UserService>();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
-PrepDB.PrepPopulation(app);

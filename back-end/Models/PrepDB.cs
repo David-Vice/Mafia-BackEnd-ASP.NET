@@ -1,4 +1,11 @@
-﻿namespace back_end.Models
+﻿using back_end.Data;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Linq;
+
+namespace back_end.Models
 {
     public static class PrepDB
     {

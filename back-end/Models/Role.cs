@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace back_end.Models
 {
     public partial class Role
@@ -11,7 +13,7 @@ namespace back_end.Models
         }
 
         public int Id { get; set; }
-        public string Rolename { get; set; } = null!;
+        public string Rolename { get; set; }
 
         public virtual ICollection<GameSessionUser> GameSessionUsers { get; set; }
     }

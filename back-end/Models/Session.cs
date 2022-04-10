@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace back_end.Models
 {
     public partial class Session
@@ -11,7 +13,7 @@ namespace back_end.Models
         }
 
         public int Id { get; set; }
-        public string SessionDescription { get; set; } = null!;
+        public string SessionDescription { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
