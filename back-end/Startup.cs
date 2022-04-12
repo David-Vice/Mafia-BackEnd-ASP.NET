@@ -35,22 +35,15 @@ namespace back_end
             services.AddControllers();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.Configure<DbConnectionInfo>(settings => Configuration.GetSection("ConnectionStrings").Bind(settings));
             services.AddScoped<IDataContext, DataContext>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "back_end", Version = "v1" });
             });
-            services.AddDbContext<DataContext>(options =>
-            {
-                //for local
-                //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-                //for remote
-                options.UseMySql(
-                            Configuration.GetConnectionString("MysqlConnection"),
-                           new MariaDbServerVersion(new Version(10, 5, 13))
-                        );
-            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,15 +51,27 @@ namespace back_end
         {
             //if (env.IsDevelopment())
            // {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "back_end v1"));
-           // }
+            //    app.UseDeveloperExceptionPage();
+             app.UseSwagger();
+             app.UseSwaggerUI(c =>
+             {
+
+                 //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "back_end v1");
+                 string swaggerJsonBasePath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
+                 c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "back_end");
+
+             }
+                 );
+          //  }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(x => x
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .SetIsOriginAllowed(origin => true) // allow any origin
+               .AllowCredentials()); // allow credentials
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

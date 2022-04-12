@@ -20,7 +20,17 @@
       "ProjectGuid": "53805281-058a-451b-be12-731f5b76c3ee",
       "DisplayName": "back-end",
       "ColorIndex": 2
+    },
+    "ba6b5e0a-ef41-4549-814a-b597d7e936d6": {
+      "ProjectGuid": "ba6b5e0a-ef41-4549-814a-b597d7e936d6",
+      "DisplayName": "back-end",
+      "ColorIndex": 3
+    },
+    "9db7c1a4-7f95-45cc-8ac8-552b69c56e5d": {
+      "ProjectGuid": "9db7c1a4-7f95-45cc-8ac8-552b69c56e5d",
+      "DisplayName": "back-end",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

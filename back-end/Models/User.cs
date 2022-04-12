@@ -9,17 +9,21 @@ namespace back_end.Models
     {
         public User()
         {
-            GameSessionUsers = new HashSet<GameSessionUser>();
+            GameSessionsUsersRoles = new HashSet<GameSessionsUsersRole>();
+            Sessions = new HashSet<Session>();
         }
 
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public string UserName { get; set; }
         public string Email { get; set; }
-        public string Username { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+        public DateTime RegistrationDate { get; set; }
+        public byte[] Photo { get; set; }
+        public int? UserRankId { get; set; }
 
-        public virtual ICollection<GameSessionUser> GameSessionUsers { get; set; }
+        public virtual UserRank UserRank { get; set; }
+        public virtual ICollection<GameSessionsUsersRole> GameSessionsUsersRoles { get; set; }
+        public virtual ICollection<Session> Sessions { get; set; }
     }
 }

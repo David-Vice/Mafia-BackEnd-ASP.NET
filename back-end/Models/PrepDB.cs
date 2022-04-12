@@ -28,10 +28,9 @@ namespace back_end.Models
                     new User()
                     {
 
-                        Name = "User1",
-                        Surname = "Userr1",
+
                         Email = "a@mail.com",
-                        Username = "User1"
+                        UserName = "User1"
 
                     }
                 );

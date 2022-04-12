@@ -1,4 +1,5 @@
-﻿using back_end.Models;
+﻿using back_end.Dtos;
+using back_end.Models;
 using back_end.Services.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 namespace back_end.Controllers
 {
     [ApiController]
+    [Route("api/[controller]s")]
     public class UserController : Controller
     {
 
@@ -15,15 +17,13 @@ namespace back_end.Controllers
             _service = service;
         }
         [HttpGet]
-        [Route("api/[controller]s")]
         public async Task<ActionResult<User>> GetUsers()
         {
             return Ok(await _service.GetAll());
         }
 
 
-        [HttpGet]
-        [Route("api/[controller]/{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _service.Get(id);
@@ -37,7 +37,6 @@ namespace back_end.Controllers
 
 
         [HttpPost]
-        [Route("api/[controller]")]
         public async Task<ActionResult> CreateUser(User user)
         {
             await _service.Add(user);
@@ -45,9 +44,7 @@ namespace back_end.Controllers
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
 
-
-        [HttpDelete]
-        [Route("api/[controller]/{id}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {
             await _service.Delete(id);
@@ -55,13 +52,12 @@ namespace back_end.Controllers
         }
 
 
-        [HttpPut]
-        [Route("api/[controller]/{id}")]
-        public async Task<ActionResult> UpdateUser( int id,User user)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateUser( int id, User user)
         {
+
             await _service.Update(id,user);
             return Ok();
-           
         }
 
     }

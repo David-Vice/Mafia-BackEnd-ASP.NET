@@ -57,12 +57,14 @@ namespace back_end.Services.Concrete
                 throw new NullReferenceException();
             }
             itemToUpdate.Id = id;
-            itemToUpdate.Name = user.Name;
             itemToUpdate.Email = user.Email;
             itemToUpdate.PasswordHash = user.PasswordHash;
             itemToUpdate.PasswordSalt = user.PasswordSalt;
-            itemToUpdate.Surname = user.Surname;
-            itemToUpdate.Username = user.Username;
+            itemToUpdate.UserName = user.UserName;
+            itemToUpdate.Photo=user.Photo;
+            itemToUpdate.Sessions = user.Sessions;
+            itemToUpdate.RegistrationDate = user.RegistrationDate;
+            
 
             await _context.SaveChangesAsync();
         }

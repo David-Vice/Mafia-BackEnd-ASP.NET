@@ -17,7 +17,7 @@ namespace back_end.Controllers
         }
        
         [HttpPost("register")]
-        public async Task<ActionResult<User?>> Register(UserDto userDto)
+        public async Task<ActionResult<User?>> Register(AuthDto userDto)
         {
             User? user = await _authService.Register(userDto);
             if (user==null)
@@ -28,18 +28,18 @@ namespace back_end.Controllers
             //return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(UserDto user)
+        public async Task<ActionResult<string>> Login(AuthDto userDto)
         {
-            int val=await _authService.Login(user);
-            if (val==-1)
+            int id=await _authService.Login(userDto);
+            if (id==-1)
             {
                 return BadRequest("Username not found!");
             }
-            else if (val==0)
+            else if (id==0)
             {
                 return BadRequest("Wrong password");
             }
-            return Ok("Success");
+            return Ok($"{id}");
           //  return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
     }

@@ -18,41 +18,39 @@ namespace back_end.Services.Concrete
             _passwordHasher = passwordHasher;
         }
         
-        public async Task<int> Login(UserDto userDto)
+        public async Task<int> Login(AuthDto authDto)
         {
             IEnumerable<User> users = await _userService.GetAll();
-            User user=users.Where(u=>u.Username.Equals(userDto.Username)).FirstOrDefault();
+            User user=users.Where(u=>u.UserName.Equals(authDto.UserName)).FirstOrDefault();
             if (user == null)
             {
                 return -1;
             }
-            if (!_passwordHasher.VerifyPassswordHash(userDto.Password,user.PasswordHash,user.PasswordSalt))
+            if (!_passwordHasher.VerifyPassswordHash(authDto.Password,user.PasswordHash,user.PasswordSalt))
             {
                 return 0;
             }
-            return 1;
+            return user.Id;
         }
 
-        public async Task<User?> Register(UserDto userDto)
+        public async Task<User?> Register(AuthDto authDto)
         {
             IEnumerable<User> users= await _userService.GetAll();
-            if (users.Any(u => u.Username == userDto.Username))
+            if (users.Any(u => u.UserName == authDto.UserName))
             {
                 return null;
             }
             else
             {
                 //hashing
-                _passwordHasher.CreatePassswordHash(userDto.Password, out byte[] passwordHash, out byte[] passwordSalt);
+                _passwordHasher.CreatePassswordHash(authDto.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
                 User user = new User()
                 {
-                    Username = userDto.Username,
-                    Email = userDto.Email,
-                    Surname = userDto.Surname,
+                    UserName = authDto.UserName,
+                    Email = authDto.Email,
                     PasswordHash=passwordHash,
                     PasswordSalt=passwordSalt,
-                    Name = userDto.Name
                 };
                 await _userService.Add(user);
                 return user;
