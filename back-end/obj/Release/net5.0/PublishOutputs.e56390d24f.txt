@@ -4,6 +4,8 @@ C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\O
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\back-end.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\back-end.runtimeconfig.json
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\back-end.pdb
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\EntityFramework.SqlServer.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\EntityFramework.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -23,7 +25,9 @@ C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\O
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\System.CodeDom.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\System.Data.SqlClient.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\System.Runtime.Caching.dll
@@ -38,6 +42,11 @@ C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\O
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\obj\Release\net5.0\PubTmp\Out\back-end.deps.json

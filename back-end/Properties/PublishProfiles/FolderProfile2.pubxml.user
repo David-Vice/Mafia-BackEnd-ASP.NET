@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\publish\</_PublishTargetUrl>
-    <History>True|2022-04-11T11:39:30.0987051Z;</History>
+    <History>True|2022-04-12T11:21:48.5609580Z;True|2022-04-11T15:39:30.0987051+04:00;</History>
   </PropertyGroup>
 </Project>
