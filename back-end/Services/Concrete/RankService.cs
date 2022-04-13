@@ -25,12 +25,12 @@ namespace back_end.Services.Concrete
             User user =await _userService.Get(userId);
             if (user == null)
             {
-                throw new NullReferenceException();
+                return null;
             }
             UserRank userRank= await _context.UserRanks.FindAsync(user.UserRankId);
             if (userRank == null)
             {
-                throw new NullReferenceException();
+                return null;
             }
             return userRank;
         }

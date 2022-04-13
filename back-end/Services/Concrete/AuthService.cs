@@ -1,7 +1,9 @@
 ﻿using back_end.Dtos;
+using back_end.Handlers;
 using back_end.Models;
 using back_end.Security;
 using back_end.Services.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,22 +20,32 @@ namespace back_end.Services.Concrete
             _passwordHasher = passwordHasher;
         }
         
-        public async Task<int> Login(AuthDto authDto)
+        public async Task<AuthDto> Login(AuthDto authDto)
         {
             IEnumerable<User> users = await _userService.GetAll();
             User user=users.Where(u=>u.UserName.Equals(authDto.UserName)).FirstOrDefault();
             if (user == null)
             {
-                return -1;
+                return null;
             }
             if (!_passwordHasher.VerifyPassswordHash(authDto.Password,user.PasswordHash,user.PasswordSalt))
             {
-                return 0;
+                return null;
             }
-            return user.Id;
+            //тут я пытаюсь облегчить жизнь фронту
+            // отправляю дто со всеми нужными полями и сразк отправлю ранк а не только ранк айди
+
+            AuthDto userDto = authDto;
+            userDto.Photo = user.Photo;
+            userDto.RegistrationDate = user.RegistrationDate;
+            userDto.Email=user.Email;
+           // userDto.UserRankId=user.UserRankId;
+
+           // userDto.UserRank = user.UserRank;
+            return null;
         }
 
-        public async Task<User?> Register(AuthDto authDto)
+        public async Task<AuthDto> Register(AuthDto authDto)
         {
             IEnumerable<User> users= await _userService.GetAll();
             if (users.Any(u => u.UserName == authDto.UserName))
@@ -44,6 +56,10 @@ namespace back_end.Services.Concrete
             {
                 //hashing
                 _passwordHasher.CreatePassswordHash(authDto.Password, out byte[] passwordHash, out byte[] passwordSalt);
+                authDto.RegistrationDate = DateTime.Now;
+                authDto.Sessions = new List<Session>();
+                authDto.Photo = ImageHandler.ImageToByteArray("mafia.png");
+              
 
                 User user = new User()
                 {
@@ -51,9 +67,10 @@ namespace back_end.Services.Concrete
                     Email = authDto.Email,
                     PasswordHash=passwordHash,
                     PasswordSalt=passwordSalt,
+
                 };
                 await _userService.Add(user);
-                return user;
+                return null;
             }
         }
 

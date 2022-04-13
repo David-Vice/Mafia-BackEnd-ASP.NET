@@ -7,7 +7,7 @@ namespace back_end.Services.Abstract
     public interface IAuthService
     {
 
-        Task<User> Register(AuthDto authDto);
-        Task<int> Login(AuthDto authDto);
+        Task<AuthDto> Register(AuthDto authDto);
+        Task<AuthDto> Login(AuthDto authDto);
     }
 }
