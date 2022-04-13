@@ -64,7 +64,6 @@ namespace back_end.Services.Concrete
                 User user = new User()
                 {
                     UserName = authDto.UserName,
-                    Email = authDto.Email,
                     PasswordHash=passwordHash,
                     PasswordSalt=passwordSalt,
 

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\back-end",
+    "\\back-end\\Controllers",
+    "\\back-end\\Data",
+    "\\back-end\\Models",
+    "\\back-end\\Services",
+    "\\back-end\\Services\\Abstract",
+    "\\back-end\\Services\\Concrete"
+  ],
+  "SelectedNode": "\\MafiaProject.sln",
+  "PreviewInSolutionExplorer": false
+}
