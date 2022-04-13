@@ -20,9 +20,8 @@ namespace back_end.Models
         public byte[] PasswordSalt { get; set; }
         public DateTime RegistrationDate { get; set; }
         public byte[] Photo { get; set; }
-        public int? UserRankId { get; set; }
+        public int Rating { get; set; }
 
-        public virtual UserRank UserRank { get; set; }
         public virtual ICollection<GameSessionsUsersRole> GameSessionsUsersRoles { get; set; }
         public virtual ICollection<Session> Sessions { get; set; }
     }

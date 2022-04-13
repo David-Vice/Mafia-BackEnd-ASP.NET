@@ -32,17 +32,16 @@ namespace back_end.Services.Concrete
             {
                 return null;
             }
-            //тут я пытаюсь облегчить жизнь фронту
-            // отправляю дто со всеми нужными полями и сразк отправлю ранк а не только ранк айди
-
+         
             AuthDto userDto = authDto;
             userDto.Photo = user.Photo;
             userDto.RegistrationDate = user.RegistrationDate;
             userDto.Email=user.Email;
-           // userDto.UserRankId=user.UserRankId;
-
-           // userDto.UserRank = user.UserRank;
-            return null;
+            userDto.Rating = user.Rating;
+            userDto.Sessions = user.Sessions;
+            userDto.GameSessionsUsersRoles = user.GameSessionsUsersRoles;
+            userDto.Photo=user.Photo;
+            return userDto;
         }
 
         public async Task<AuthDto> Register(AuthDto authDto)
@@ -59,17 +58,23 @@ namespace back_end.Services.Concrete
                 authDto.RegistrationDate = DateTime.Now;
                 authDto.Sessions = new List<Session>();
                 authDto.Photo = ImageHandler.ImageToByteArray("mafia.png");
-              
-
+                authDto.GameSessionsUsersRoles=new List<GameSessionsUsersRole>();
+                
                 User user = new User()
                 {
                     UserName = authDto.UserName,
                     PasswordHash=passwordHash,
                     PasswordSalt=passwordSalt,
-
+                    RegistrationDate=authDto.RegistrationDate,
+                    Email=authDto.Email,
+                    Sessions=authDto.Sessions,
+                    Photo=authDto.Photo,
+                    GameSessionsUsersRoles=authDto.GameSessionsUsersRoles,
+                    Rating=200
+                    
                 };
                 await _userService.Add(user);
-                return null;
+                return authDto;
             }
         }
 

@@ -14,7 +14,6 @@ namespace back_end.Data
         DbSet<PlayerIngameStatus> PlayerIngameStatuses { get; set; }
         DbSet<Role> Roles { get; set; }
         DbSet<Session> Sessions { get; set; }
-        DbSet<UserRank> UserRanks { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
     }

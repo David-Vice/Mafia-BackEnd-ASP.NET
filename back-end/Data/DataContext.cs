@@ -31,7 +31,7 @@ namespace back_end.Data
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Session> Sessions { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserRank> UserRanks { get; set; }
+     
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -206,8 +206,6 @@ namespace back_end.Data
                 entity.HasIndex(e => e.UserName, "UserName")
                     .IsUnique();
 
-                entity.HasIndex(e => e.UserRankId, "UserRankID");
-
                 entity.Property(e => e.Id).HasColumnType("int(11)");
 
                 entity.Property(e => e.Email)
@@ -218,6 +216,10 @@ namespace back_end.Data
 
                 entity.Property(e => e.PasswordSalt).IsRequired();
 
+                entity.Property(e => e.Rating)
+                    .HasColumnType("int(11)")
+                    .HasDefaultValueSql("'200'");
+
                 entity.Property(e => e.RegistrationDate)
                     .HasColumnType("date")
                     .HasDefaultValueSql("curdate()");
@@ -225,29 +227,6 @@ namespace back_end.Data
                 entity.Property(e => e.UserName)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.UserRankId)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("UserRankID");
-
-                entity.HasOne(d => d.UserRank)
-                    .WithMany(p => p.Users)
-                    .HasForeignKey(d => d.UserRankId)
-                    .HasConstraintName("Users_ibfk_1");
-            });
-
-            modelBuilder.Entity<UserRank>(entity =>
-            {
-                entity.HasIndex(e => e.Rank, "Rank")
-                    .IsUnique();
-
-                entity.Property(e => e.Id).HasColumnType("int(11)");
-
-                entity.Property(e => e.Description).IsRequired();
-
-                entity.Property(e => e.Rank)
-                    .IsRequired()
-                    .HasColumnType("text");
             });
 
             OnModelCreatingPartial(modelBuilder);

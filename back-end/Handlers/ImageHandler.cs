@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Drawing;
+using System.Net;
+
 namespace back_end.Handlers
 {
     public static class ImageHandler
@@ -8,8 +10,10 @@ namespace back_end.Handlers
         private static string _imagePath= "https://kananmafiapictures.alwaysdata.net/pictures/";
         public static byte[] ImageToByteArray(string filename)
         {
-            
-            return  File.ReadAllBytes(_imagePath+filename);
+            using (WebClient webClient = new WebClient())
+            {
+                return webClient.DownloadData(_imagePath + filename);
+            }
         }
     }
 }
