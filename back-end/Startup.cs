@@ -36,6 +36,8 @@ namespace back_end
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IGameSessionsUsersRoleService, GameSessionsUsersRoleService>();
+            services.AddScoped<ISessionService, SessionService>();
+            services.AddScoped<IRoleService, RoleService>();
             services.Configure<DbConnectionInfo>(settings => Configuration.GetSection("ConnectionStrings").Bind(settings));
             services.AddScoped<IDataContext, DataContext>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
