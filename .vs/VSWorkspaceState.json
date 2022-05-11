@@ -2,12 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\back-end",
-    "\\back-end\\Controllers",
-    "\\back-end\\Models",
-    "\\back-end\\Services",
-    "\\back-end\\Services\\Abstract",
-    "\\back-end\\Services\\Concrete"
+    "\\back-end\\Models"
   ],
-  "SelectedNode": "\\back-end\\Controllers\\UserController.cs",
+  "SelectedNode": "\\back-end\\Models\\Session.cs",
   "PreviewInSolutionExplorer": false
 }
