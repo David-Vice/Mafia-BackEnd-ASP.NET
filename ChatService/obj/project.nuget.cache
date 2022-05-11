@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UoHztQEv26C8qFZzl/sqNnpDZNBhgbQ/1JWARQSub4eXjvPu2fYGJUaTOhBKvHv42umBJWrbIpy514u8p2ylCw==",
+  "dgSpecHash": "uoDtEfZxebA8sm7QDytZEC0ID3AiaWFyWXJS1uU1kh9Tcmm98at/EMOJv5eGtgwG42kC650WpKVyIHdZotpygg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kenan\\source\\MafiaProject\\back-end\\ChatService\\ChatService.csproj",
+  "projectFilePath": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\ChatService\\ChatService.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
