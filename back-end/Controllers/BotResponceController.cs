@@ -32,7 +32,7 @@ namespace back_end.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<BotResponse>> GetBotResponces()
+        public async Task<ActionResult<IEnumerable<BotResponse>>> GetBotResponces()
         {
             return Ok(await _botResponceService.GetAll());
         }

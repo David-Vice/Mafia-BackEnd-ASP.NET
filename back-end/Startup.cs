@@ -39,10 +39,11 @@ namespace back_end
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IBotResponceService, BotResponceService>();
+            services.AddScoped<IPlayerInGameStatusService, PlayerInGameStatusService>();
             services.Configure<DbConnectionInfo>(settings => Configuration.GetSection("ConnectionStrings").Bind(settings));
             services.AddScoped<IDataContext, DataContext>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
-           
+
             services.AddCors();
             services.AddSwaggerGen(c =>
             {
