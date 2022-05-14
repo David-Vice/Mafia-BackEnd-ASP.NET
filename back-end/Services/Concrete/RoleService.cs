@@ -59,10 +59,9 @@ namespace back_end.Services.Concrete
                 throw new NullReferenceException();
             }
 
-            roleToUpdate.Id = role.Id;
-            role.Role1 = role.Role1;
-            role.RoleDescription = role.RoleDescription;
-            role.RolePhoto = role.RolePhoto;
+            roleToUpdate.Role1 = role.Role1;
+            roleToUpdate.RoleDescription = role.RoleDescription;
+            roleToUpdate.RolePhoto = role.RolePhoto;
 
             await _dataContext.SaveChangesAsync();
         }
