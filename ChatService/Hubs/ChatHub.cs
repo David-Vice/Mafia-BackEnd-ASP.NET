@@ -14,7 +14,7 @@ namespace ChatService.Hubs
         public ChatHub(IDictionary<string,UserConnection> connections)
         {
             _connections = connections;
-            _botUser = "MyChat Bot";
+            _botUser = "Mafia Bot";
         }
 
         public override Task OnDisconnectedAsync(Exception exception)
