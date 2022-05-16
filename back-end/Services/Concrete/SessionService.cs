@@ -33,6 +33,8 @@ namespace back_end.Services.Concrete
         {
             if (session.NumberOfPlayers <= session.MaxNumberOfPlayers)
             {
+                session.Admin=_dataContext.Users.Where(x=>x.Id==session.AdminId).FirstOrDefault();
+                session.GameSessionsUsersRoles=_dataContext.GameSessionsUsersRoles.Where(x=>x.SessionId==session.Id).ToList();
                 _dataContext.Sessions?.Add(session);
                 await _dataContext.SaveChangesAsync();
             }
