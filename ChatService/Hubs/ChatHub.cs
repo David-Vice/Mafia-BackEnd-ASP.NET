@@ -51,10 +51,10 @@ namespace ChatService.Hubs
                     else if (message.Split(" ")[2].ToLower() == "voted" && message.Split(" ")[3].ToLower() == "out") statusid = 2;
 
                     if (roleid == 0 || statusid == 0)
-                        await InformPlayerStatus(roleid, statusid);
+                        await TestInformPlayerStatusChange(roleid, statusid);
                     else
                     {
-                        string msg = await InformPlayerStatus(roleid, statusid);
+                        string msg = await TestInformPlayerStatusChange(roleid, statusid);
                         await Clients.Group(userConnection.Room).SendAsync("ReceiveMessage", userConnection.User, msg);
                     }
                 }
@@ -90,10 +90,31 @@ namespace ChatService.Hubs
         /// <param name="roleId">Id of the role, that performed action on player</param>
         /// <param name="statusId">Id of the action performed on player</param>
         /// <returns>Random message according to role id and status id from the database</returns>
-        public async Task<string> InformPlayerStatus(int roleId, int statusId)
+        public async Task<string> TestInformPlayerStatusChange(int roleId, int statusId)
         {
             Bots.BotModels.PlayerStatusInformerBot bot = new Bots.BotModels.PlayerStatusInformerBot();
             return await bot.GetPlayerStatusMessage(roleId, statusId);
+        }
+
+
+
+
+
+        /// <summary>
+        /// Inform all players about player status(what happened to player), considering the role of the player, who performed action(roleId)
+        /// </summary>
+        /// <param name="roleId">Id of the role, that performed action on player</param>
+        /// <param name="statusId">Id of the action performed on player</param>
+        /// <returns>void</returns>
+        public async Task InformPlayerStatusChange(int roleId, int statusId)
+        {
+            Bots.BotModels.PlayerStatusInformerBot bot = new Bots.BotModels.PlayerStatusInformerBot();
+
+            if (_connections.TryGetValue(Context.ConnectionId, out UserConnection userConnection))
+            {
+                string responce = await bot.GetPlayerStatusMessage(roleId, statusId);
+                await Clients.Group(userConnection.Room).SendAsync("ReceiveMessage", userConnection.User, responce);
+            }
         }
 
     }
