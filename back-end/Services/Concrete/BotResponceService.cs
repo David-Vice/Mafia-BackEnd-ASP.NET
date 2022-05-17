@@ -19,8 +19,13 @@ namespace back_end.Services.Concrete
 
         public async Task Add(BotResponse botResponse)
         {
-            _dataContext.BotResponses?.Add(botResponse);
-            await _dataContext.SaveChangesAsync();
+            if (botResponse != null)
+            {
+                botResponse.PlayerInGameStatus = _dataContext.PlayerIngameStatuses.Where(x=>x.Id == botResponse.PlayerInGameStatusId).FirstOrDefault();
+                botResponse.Role = _dataContext.Roles.Where(x=>x.Id == botResponse.RoleId).FirstOrDefault();
+                _dataContext.BotResponses?.Add(botResponse);
+                await _dataContext.SaveChangesAsync();
+            }
         }
 
         public async Task Delete(int id)
@@ -74,7 +79,7 @@ namespace back_end.Services.Concrete
             responce.RoleId = botResponse.RoleId;
             responce.PlayerInGameStatusId = botResponse.PlayerInGameStatusId;
             responce.Response = botResponse.Response;
- 
+
             await _dataContext.SaveChangesAsync();
         }
     }

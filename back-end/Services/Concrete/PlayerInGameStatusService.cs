@@ -21,8 +21,13 @@ namespace back_end.Services.Concrete
 
         public async Task Add(PlayerIngameStatus playerIngameStatus)
         {
-            _dataContext.PlayerIngameStatuses?.Add(playerIngameStatus);
-            await _dataContext.SaveChangesAsync();
+            if (playerIngameStatus != null)
+            {
+                playerIngameStatus.BotResponses = _dataContext.BotResponses.Where(x => x.PlayerInGameStatusId == playerIngameStatus.Id).ToList();
+                playerIngameStatus.GameSessionsUsersRoles = _dataContext.GameSessionsUsersRoles.Where(x => x.PlayerIngameStatusId == playerIngameStatus.Id).ToList();
+                _dataContext.PlayerIngameStatuses?.Add(playerIngameStatus);
+                await _dataContext.SaveChangesAsync();
+            }
         }
 
         public async Task Delete(int id)
@@ -58,7 +63,9 @@ namespace back_end.Services.Concrete
             {
                 throw new NullReferenceException(); 
             }
-            status.Status = playerIngameStatus.Status;
+            if (!String.IsNullOrEmpty(playerIngameStatus.Status))
+                status.Status = playerIngameStatus.Status;
+
             await _dataContext.SaveChangesAsync();
         }
     }

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ChatService",
+    "\\ChatService\\Hubs"
   ],
-  "SelectedNode": "\\C:\\Users\\Mame_ym86\\Source\\Repos\\back-end",
+  "SelectedNode": "\\ChatService\\Hubs\\ChatHub.cs",
   "PreviewInSolutionExplorer": false
 }
