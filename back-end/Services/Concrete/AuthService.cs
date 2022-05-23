@@ -3,9 +3,13 @@ using back_end.Handlers;
 using back_end.Models;
 using back_end.Security;
 using back_end.Services.Abstract;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace back_end.Services.Concrete
@@ -20,7 +24,7 @@ namespace back_end.Services.Concrete
             _passwordHasher = passwordHasher;
         }
         
-        public async Task<AuthDto> Login(AuthDto authDto)
+        public async Task<string> Login(AuthDto authDto)
         {
             IEnumerable<User> users = await _userService.GetAll();
             User user=users.Where(u=>u.UserName.Equals(authDto.UserName)).FirstOrDefault();
@@ -32,16 +36,31 @@ namespace back_end.Services.Concrete
             {
                 return null;
             }
-         
+
             AuthDto userDto = authDto;
             userDto.Photo = user.Photo;
             userDto.RegistrationDate = user.RegistrationDate;
-            userDto.Email=user.Email;
+            userDto.Email = user.Email;
             userDto.Rating = user.Rating;
             userDto.Sessions = user.Sessions;
             userDto.GameSessionsUsersRoles = user.GameSessionsUsersRoles;
-            userDto.Photo=user.Photo;
-            return userDto;
+            userDto.Photo = user.Photo;
+
+            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("!My!T0k3n!S3cr3t!K3y"));
+            SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim("UserName", authDto.UserName),
+                new Claim("Email", authDto.Email),
+                new Claim("RegDate", authDto.RegistrationDate.ToString()),
+                //new Claim("Photo", user.Photo),
+                new Claim("Rating", authDto.Rating.ToString()),
+            };
+
+            JwtSecurityToken token = new JwtSecurityToken(claims: claims, expires: DateTime.Now.AddDays(1), signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
         public async Task<AuthDto> Register(AuthDto authDto)
