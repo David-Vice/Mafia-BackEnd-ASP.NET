@@ -4,6 +4,7 @@ using back_end.Services.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace back_end.Services.Concrete
@@ -47,6 +48,13 @@ namespace back_end.Services.Concrete
         public async Task<IEnumerable<User>> GetAll()
         {
             return await _context.Users.ToListAsync();
+        }
+
+        public async Task<byte[]> GetPhoto(int id)
+        {
+            User user =  await _context.Users.FindAsync(id);
+            if (user == null) throw new NullReferenceException();
+            return user.Photo;
         }
 
         public async Task Update(int id,User user)

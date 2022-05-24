@@ -11,5 +11,7 @@ namespace back_end.Services.Abstract
         Task Add(User user);
         Task Delete(int id);
         Task Update(int id,User user);
+
+        Task<byte[]> GetPhoto(int id);
     }
 }
