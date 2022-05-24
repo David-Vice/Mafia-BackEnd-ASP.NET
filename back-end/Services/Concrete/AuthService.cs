@@ -48,12 +48,29 @@ namespace back_end.Services.Concrete
 
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("!My!T0k3n!S3cr3t!K3y"));
             SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            string sessionClaim = "[";
+            List<Session> sessions = userDto.Sessions.ToList();
 
+            for (int i = 0; i < sessions.Count; i++)
+            {
+                sessionClaim += "{ sessionName: \"" + sessions[i].SessionName + "\"";
+                sessionClaim += "startTime: \"" + sessions[i].StartTime.ToString() + "\"";
+                sessionClaim += "endTime: \"" + sessions[i].EndTime.ToString() + "\" }";
+                if (i < sessions.Count - 1)
+                {
+                    sessionClaim += ",";
+                }
+
+
+            }
+            sessionClaim += "]";
             List<Claim> claims = new List<Claim>
             {
                 new Claim("UserName", authDto.UserName),
                 new Claim("Email", authDto.Email),
                 new Claim("RegDate", authDto.RegistrationDate.ToString()),
+                new Claim("Id", user.Id.ToString()),
+                new Claim("Sessions",sessionClaim),
                 //new Claim("Photo", user.Photo),
                 new Claim("Rating", authDto.Rating.ToString()),
             };
@@ -63,7 +80,7 @@ namespace back_end.Services.Concrete
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<AuthDto> Register(AuthDto authDto)
+        public async Task<string> Register(AuthDto authDto)
         {
             IEnumerable<User> users= await _userService.GetAll();
             if (users.Any(u => u.UserName == authDto.UserName))
@@ -93,10 +110,126 @@ namespace back_end.Services.Concrete
                     
                 };
                 await _userService.Add(user);
-                return authDto;
+                SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("!My!T0k3n!S3cr3t!K3y"));
+                SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                string sessionClaim = "[";
+                List<Session> sessions = authDto.Sessions.ToList();
+
+                for (int i = 0; i < sessions.Count; i++)
+                {
+                    sessionClaim += "{ sessionName: \"" + sessions[i].SessionName + "\"";
+                    sessionClaim += "startTime: \"" + sessions[i].StartTime.ToString() + "\"";
+                    sessionClaim += "endTime: \"" + sessions[i].EndTime.ToString() + "\" }";
+                    if (i < sessions.Count - 1)
+                    {
+                        sessionClaim += ",";
+                    }
+
+
+                }
+                sessionClaim += "]";
+                List<Claim> claims = new List<Claim>
+            {
+                new Claim("UserName", authDto.UserName),
+                new Claim("Email", authDto.Email),
+                new Claim("RegDate", authDto.RegistrationDate.ToString()),
+                new Claim("Id", user.Id.ToString()),
+                new Claim("Sessions",sessionClaim),
+                //new Claim("Photo", user.Photo),
+                new Claim("Rating", authDto.Rating.ToString()),
+            };
+
+                JwtSecurityToken token = new JwtSecurityToken(claims: claims, expires: DateTime.Now.AddDays(1), signingCredentials: credentials);
+
+                return new JwtSecurityTokenHandler().WriteToken(token);
             }
         }
 
-        
+        public async Task<string> UpdateLogin(int id,AuthDto authDto)
+        {
+            var itemToUpdate = await _userService.Get(id);
+            if (itemToUpdate == null)
+            {
+                return null;
+            }
+
+            IEnumerable<User> users = await _userService.GetAll();
+            if (users.Any(u => u.UserName == authDto.UserName&&u.Id!=id))
+            {
+                return null;
+            }
+            else
+            {
+                //hashing
+                byte[] passwordHash;
+                byte[] passwordSalt;
+                if (authDto.Password != "" && authDto.Password != null)
+                {
+                    _passwordHasher.CreatePassswordHash(authDto.Password, out passwordHash, out passwordSalt);
+
+                }
+                else
+                {
+                    passwordHash=itemToUpdate.PasswordHash;
+                    passwordSalt=itemToUpdate.PasswordSalt;
+                }
+                authDto.RegistrationDate = itemToUpdate.RegistrationDate;
+                authDto.Sessions = itemToUpdate.Sessions;
+                if (authDto.Photo==null)
+                {
+                    authDto.Photo = itemToUpdate.Photo;
+                }
+                authDto.GameSessionsUsersRoles = itemToUpdate.GameSessionsUsersRoles;
+                authDto.Rating = itemToUpdate.Rating;
+                User user = new User()
+                {
+                    Id= id,
+                    UserName = authDto.UserName,
+                    PasswordHash = passwordHash,
+                    PasswordSalt = passwordSalt,
+                    RegistrationDate = authDto.RegistrationDate,
+                    Email = authDto.Email,
+                    Sessions = authDto.Sessions,
+                    Photo = authDto.Photo,
+                    GameSessionsUsersRoles = authDto.GameSessionsUsersRoles,
+                    Rating = authDto.Rating
+                    
+                };
+
+                await _userService.Update(id, user);
+                SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("!My!T0k3n!S3cr3t!K3y"));
+                SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                string sessionClaim = "[";
+                List<Session> sessions = authDto.Sessions.ToList();
+
+                for (int i = 0; i < sessions.Count; i++)
+                {
+                    sessionClaim += "{ sessionName: \"" + sessions[i].SessionName + "\"";
+                    sessionClaim += "startTime: \"" + sessions[i].StartTime.ToString() + "\"";
+                    sessionClaim += "endTime: \"" + sessions[i].EndTime.ToString() + "\" }";
+                    if (i < sessions.Count - 1)
+                    {
+                        sessionClaim += ",";
+                    }
+
+
+                }
+                sessionClaim += "]";
+                List<Claim> claims = new List<Claim>
+            {
+                new Claim("UserName", authDto.UserName),
+                new Claim("Email", authDto.Email),
+                new Claim("RegDate", authDto.RegistrationDate.ToString()),
+                new Claim("Id", user.Id.ToString()),
+                new Claim("Sessions",sessionClaim),
+                //new Claim("Photo", user.Photo),
+                new Claim("Rating", authDto.Rating.ToString()),
+            };
+
+                JwtSecurityToken token = new JwtSecurityToken(claims: claims, expires: DateTime.Now.AddDays(1), signingCredentials: credentials);
+
+                return new JwtSecurityTokenHandler().WriteToken(token);
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace back_end.Dtos
         public string Email { get; set; }//
         public DateTime RegistrationDate { get; set; }
         public byte[] Photo { get; set; }
-        public int? Rating { get; set; } = 200;
+        public int Rating { get; set; } = 200;
         public virtual ICollection<GameSessionsUsersRole> GameSessionsUsersRoles { get; set; }
         public virtual ICollection<Session> Sessions { get; set; }
 
