@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4VMbn1QRObjjotM6FV1PR7ooPeG9zzmwOHGjWXBeo6BGGCJPJzx9sXSsZqV1fUNje+FPfxt9jt1aKLFyvI5OEw==",
+  "dgSpecHash": "fZPsqsujQ4GvzqvD61E89zEmh6POdM1mUr47maPeSCbm3oN0vNwPXvja5ZwR7o3uPuZ5d6QNhYCqawKpa62msw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\back-end\\back-end.csproj",
+  "projectFilePath": "C:\\Users\\kenan\\source\\repos\\MafiaGame\\back-end\\back-end.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages\\devexpress.data\\21.2.5\\devexpress.data.21.2.5.nupkg.sha512",
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages\\devexpress.xpo\\21.2.5\\devexpress.xpo.21.2.5.nupkg.sha512",

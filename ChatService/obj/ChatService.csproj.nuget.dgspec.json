@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\ChatService\\ChatService.csproj": {}
+    "C:\\Users\\kenan\\source\\repos\\MafiaGame\\ChatService\\ChatService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\ChatService\\ChatService.csproj": {
+    "C:\\Users\\kenan\\source\\repos\\MafiaGame\\ChatService\\ChatService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\ChatService\\ChatService.csproj",
+        "projectUniqueName": "C:\\Users\\kenan\\source\\repos\\MafiaGame\\ChatService\\ChatService.csproj",
         "projectName": "ChatService",
-        "projectPath": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\ChatService\\ChatService.csproj",
+        "projectPath": "C:\\Users\\kenan\\source\\repos\\MafiaGame\\ChatService\\ChatService.csproj",
         "packagesPath": "C:\\Users\\kenan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\ChatService\\obj\\",
+        "outputPath": "C:\\Users\\kenan\\source\\repos\\MafiaGame\\ChatService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
