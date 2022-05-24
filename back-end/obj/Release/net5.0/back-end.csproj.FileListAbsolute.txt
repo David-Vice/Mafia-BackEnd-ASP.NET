@@ -96,7 +96,6 @@ C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\Microsoft.Iden
 C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\Microsoft.OpenApi.dll
 C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\MySqlConnector.dll
-C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\Newtonsoft.Json.dll
 C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\kenan\Source\Repos\MafiaGame\back-end\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -233,3 +232,4 @@ C:\Users\Mame_ym86\Source\Repos\back-end\back-end\obj\Release\net5.0\refint\back
 C:\Users\Mame_ym86\Source\Repos\back-end\back-end\obj\Release\net5.0\back-end.pdb
 C:\Users\Mame_ym86\Source\Repos\back-end\back-end\obj\Release\net5.0\back-end.genruntimeconfig.cache
 C:\Users\Mame_ym86\Source\Repos\back-end\back-end\obj\Release\net5.0\ref\back-end.dll
+C:\Users\kenan\source\repos\MafiaGame\back-end\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

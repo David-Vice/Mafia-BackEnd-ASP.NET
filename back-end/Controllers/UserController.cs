@@ -35,6 +35,13 @@ namespace back_end.Controllers
             return Ok(user);
         }
 
+        [HttpGet("GetProfilePhoto/{id}")]
+        public async Task<ActionResult<byte[]>> GetPhoto(int id)
+        {
+            var photo = await _service.GetPhoto(id);
+            if (photo == null) return NotFound();
+            return Ok(photo);
+        }
 
         [HttpPost]
         public async Task<ActionResult> CreateUser(User user)
@@ -59,6 +66,8 @@ namespace back_end.Controllers
             await _service.Update(id,user);
             return Ok();
         }
+
+
 
     }
 }
