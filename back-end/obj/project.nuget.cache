@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fZPsqsujQ4GvzqvD61E89zEmh6POdM1mUr47maPeSCbm3oN0vNwPXvja5ZwR7o3uPuZ5d6QNhYCqawKpa62msw==",
+  "dgSpecHash": "T2grQnnTGb554gq9QufHHmSO1nprbxNJ/6KECNRa771AkxXJgjydHX/U1pmrKarNiaKnjMFLgfTvGK3+3Ecb3w==",
   "success": true,
   "projectFilePath": "C:\\Users\\kenan\\source\\repos\\MafiaGame\\back-end\\back-end.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages\\devexpress.xpo\\21.2.5\\devexpress.xpo.21.2.5.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -29,11 +30,11 @@
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identity.client\\4.14.0\\microsoft.identity.client.4.14.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\5.6.0\\microsoft.identitymodel.jsonwebtokens.5.6.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.logging\\5.6.0\\microsoft.identitymodel.logging.5.6.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.protocols\\5.6.0\\microsoft.identitymodel.protocols.5.6.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.6.0\\microsoft.identitymodel.protocols.openidconnect.5.6.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.6.0\\microsoft.identitymodel.tokens.5.6.0.nupkg.sha512",
+    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.7.1\\microsoft.identitymodel.jsonwebtokens.6.7.1.nupkg.sha512",
+    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.logging\\6.7.1\\microsoft.identitymodel.logging.6.7.1.nupkg.sha512",
+    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.7.1\\microsoft.identitymodel.protocols.6.7.1.nupkg.sha512",
+    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.7.1\\microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
+    "C:\\Users\\kenan\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
@@ -41,7 +42,6 @@
     "C:\\Users\\kenan\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\mysqlconnector\\1.3.13\\mysqlconnector.1.3.13.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\5.0.4\\pomelo.entityframeworkcore.mysql.5.0.4.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
@@ -70,18 +70,15 @@
     "C:\\Users\\kenan\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.globalization.extensions\\4.3.0\\system.globalization.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\system.identitymodel.tokens.jwt\\5.6.0\\system.identitymodel.tokens.jwt.5.6.0.nupkg.sha512",
+    "C:\\Users\\kenan\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.7.1\\system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.net.nameresolution\\4.3.0\\system.net.nameresolution.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.private.servicemodel\\4.5.3\\system.private.servicemodel.4.5.3.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
@@ -99,7 +96,6 @@
     "C:\\Users\\kenan\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
-    "C:\\Users\\kenan\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\system.runtime.numerics.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.runtime.serialization.formatters\\4.3.0\\system.runtime.serialization.formatters.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.runtime.serialization.json\\4.3.0\\system.runtime.serialization.json.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.runtime.serialization.primitives\\4.3.0\\system.runtime.serialization.primitives.4.3.0.nupkg.sha512",
@@ -128,5 +124,12 @@
     "C:\\Users\\kenan\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\kenan\\source\\repos\\MafiaGame\\back-end\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

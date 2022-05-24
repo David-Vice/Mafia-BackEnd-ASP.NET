@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\back-end",
-    "\\back-end\\Controllers",
-    "\\back-end\\Models"
+    "\\ChatService",
+    "\\ChatService\\Hubs"
   ],
-  "SelectedNode": "\\back-end\\Controllers\\UserController.cs",
+  "SelectedNode": "\\ChatService\\Hubs\\ChatHub.cs",
   "PreviewInSolutionExplorer": false
 }

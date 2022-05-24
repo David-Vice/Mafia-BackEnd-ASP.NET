@@ -41,5 +41,14 @@ namespace back_end.Controllers
         {
             return Ok(await _service.GetUsernamesBySessionId(id));
         }
+
+
+        [HttpPost]
+        public async Task<ActionResult> CreateGameSessionsUsersRole(GameSessionsUsersRole gameSessionsUsersRole)
+        {
+            await _service.Add(gameSessionsUsersRole);
+            return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + gameSessionsUsersRole.Id, gameSessionsUsersRole);
+        }
+
     }
 }

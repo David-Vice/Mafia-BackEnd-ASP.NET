@@ -34,6 +34,8 @@ namespace back_end.Services.Concrete
             return await _dataContext.GameSessionsUsersRoles.ToListAsync();
         }
 
+
+
         public async Task<List<string>> GetUsernamesBySessionId(int id)
         {
             IEnumerable<GameSessionsUsersRole> gameSessions = await GetAll();
@@ -43,6 +45,19 @@ namespace back_end.Services.Concrete
             List<string> usernames = users.Where(u => userids.Contains(u.Id)).Select(u => u.UserName).ToList();
 
             return usernames;
+        }
+
+        public async Task Add(GameSessionsUsersRole gsur)
+        {
+            if (gsur != null)
+            {
+                gsur.User = _dataContext.Users.Where(x=>x.Id == gsur.UserId).FirstOrDefault();
+                gsur.Session = _dataContext.Sessions.Where(x=>x.Id == gsur.SessionId).FirstOrDefault();
+                gsur.Role = _dataContext.Roles.Where(x => x.Id == gsur.RoleId).FirstOrDefault();
+                gsur.PlayerIngameStatus = _dataContext.PlayerIngameStatuses.Where(x => x.Id == gsur.PlayerIngameStatusId).FirstOrDefault();
+                _dataContext.GameSessionsUsersRoles?.Add(gsur);
+                await _dataContext.SaveChangesAsync();
+            }
         }
     }
 }

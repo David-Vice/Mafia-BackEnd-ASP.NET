@@ -28,15 +28,15 @@ namespace back_end.Controllers
             //return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
         [HttpPost("login")]
-        public async Task<ActionResult<AuthDto>> Login(AuthDto userDto)
+        public async Task<ActionResult<string>> Login(AuthDto userDto)
         {
-            AuthDto user = await _authService.Login(userDto);
-            if (user == null)
+            string token = await _authService.Login(userDto);
+            if (token == null)
             {
                 return BadRequest("Username or Password is incorrect!");
             }
             
-            return Ok(user);
+            return Ok(token);
           //  return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
     }

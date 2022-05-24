@@ -4,6 +4,7 @@ using back_end.Services.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace back_end.Services.Concrete
@@ -12,6 +13,7 @@ namespace back_end.Services.Concrete
     {
         private readonly IDataContext _dataContext;
 
+
         public RoleService(IDataContext dataContext)
         {
             _dataContext = dataContext;
@@ -19,8 +21,13 @@ namespace back_end.Services.Concrete
 
         public async Task Add(Role role)
         {
-            _dataContext.Roles?.Add(role);
-            await _dataContext.SaveChangesAsync();
+            if (role != null)
+            {
+                role.BotResponses = _dataContext.BotResponses.Where(x=>x.RoleId == role.Id).ToList();
+                role.GameSessionsUsersRoles = _dataContext.GameSessionsUsersRoles.Where(x => x.RoleId == role.Id).ToList();
+                _dataContext.Roles?.Add(role);
+                await _dataContext.SaveChangesAsync();
+            }
         }
 
         public async Task Delete(int id)

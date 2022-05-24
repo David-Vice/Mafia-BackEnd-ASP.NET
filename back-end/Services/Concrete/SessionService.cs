@@ -31,7 +31,7 @@ namespace back_end.Services.Concrete
 
         public async Task Add(Session session)
         {
-            if (session.NumberOfPlayers <= session.MaxNumberOfPlayers)
+            if (session.NumberOfPlayers <= session.MaxNumberOfPlayers && session != null)
             {
                 session.Admin=_dataContext.Users.Where(x=>x.Id==session.AdminId).FirstOrDefault();
                 session.GameSessionsUsersRoles=_dataContext.GameSessionsUsersRoles.Where(x=>x.SessionId==session.Id).ToList();
