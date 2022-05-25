@@ -19,12 +19,12 @@ namespace back_end.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<AuthDto>> Register(AuthDto userDto)
         {
-            AuthDto user = await _authService.Register(userDto);
-            if (user == null)
+            string token = await _authService.Register(userDto);
+            if (token == null)
             {
                 return BadRequest("This username has already been taken");
             }
-            return Ok(user);
+            return Ok(token);
             //return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
         [HttpPost("login")]
@@ -38,6 +38,19 @@ namespace back_end.Controllers
             
             return Ok(token);
           //  return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
+        }
+        
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateLogin(int id,AuthDto userDto)
+        {
+            string token = await _authService.UpdateLogin(id,userDto);
+            if (token == null)
+            {
+                return BadRequest("This username has already been taken");
+            }
+
+            return Ok(token);
+            //  return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + user.Id, user);
         }
     }
 }
