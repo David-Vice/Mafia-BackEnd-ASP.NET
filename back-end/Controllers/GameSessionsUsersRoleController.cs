@@ -50,5 +50,11 @@ namespace back_end.Controllers
             return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + gameSessionsUsersRole.Id, gameSessionsUsersRole);
         }
 
+        [HttpPut("DistributeRoles")]
+        public async Task<ActionResult> DistributeRoles(int sessionId)
+        {
+            await _service.DistributeRoles(sessionId);
+            return Ok("Roles are distributed!");
+        }
     }
 }

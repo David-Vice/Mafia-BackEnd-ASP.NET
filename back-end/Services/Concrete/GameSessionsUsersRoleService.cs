@@ -59,5 +59,41 @@ namespace back_end.Services.Concrete
                 await _dataContext.SaveChangesAsync();
             }
         }
+
+        public async Task DistributeRoles(int sessionId)
+        {
+            int mafiaCount = 0;
+            IEnumerable<GameSessionsUsersRole> gameSessions = await GetAll();
+            List<GameSessionsUsersRole> gameSessionsUsersRoles = gameSessions.Where(gs => gs.SessionId.Equals(sessionId)).ToList();
+            if(5<=gameSessionsUsersRoles.Count && gameSessionsUsersRoles.Count<=7)
+            {
+                mafiaCount = 1;
+            }
+            else if (8 <= gameSessionsUsersRoles.Count && gameSessionsUsersRoles.Count <= 12)
+            {
+                mafiaCount = 2;
+            }
+            else if (13 <= gameSessionsUsersRoles.Count && gameSessionsUsersRoles.Count <= 20)
+            {
+                mafiaCount = 3;
+            }
+            Random rand = new Random();
+            List<GameSessionsUsersRole> shuffledGameSessionsUsersRole = gameSessionsUsersRoles.OrderBy(_ => rand.Next()).ToList();
+
+            shuffledGameSessionsUsersRole[0].RoleId = 4;
+            for (int i = 1; i < 1+mafiaCount; i++)
+            {
+                shuffledGameSessionsUsersRole[i].RoleId = 2;
+            }
+            for(int i = 1+mafiaCount; i<shuffledGameSessionsUsersRole.Count; i++)
+            {
+                shuffledGameSessionsUsersRole[i].RoleId = 1;
+            }
+            for (int i = 0; i < shuffledGameSessionsUsersRole.Count; i++)
+            {
+                _dataContext.GameSessionsUsersRoles?.Update(shuffledGameSessionsUsersRole[i]);
+            }
+            await _dataContext.SaveChangesAsync();
+        }
     }
 }
