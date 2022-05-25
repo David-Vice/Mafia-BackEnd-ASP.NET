@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T2grQnnTGb554gq9QufHHmSO1nprbxNJ/6KECNRa771AkxXJgjydHX/U1pmrKarNiaKnjMFLgfTvGK3+3Ecb3w==",
+  "dgSpecHash": "tfbleoWgmnSbqrMD+ixdZuQAMkRwSu4Th/ospTgM6cVk+c8DJzO13kXT8j+uftjBHmduLnt/SskGX/9d790t/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kenan\\source\\repos\\MafiaGame\\back-end\\back-end.csproj",
+  "projectFilePath": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\back-end\\back-end.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages\\devexpress.data\\21.2.5\\devexpress.data.21.2.5.nupkg.sha512",
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages\\devexpress.xpo\\21.2.5\\devexpress.xpo.21.2.5.nupkg.sha512",
@@ -124,12 +124,5 @@
     "C:\\Users\\kenan\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\kenan\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\kenan\\source\\repos\\MafiaGame\\back-end\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

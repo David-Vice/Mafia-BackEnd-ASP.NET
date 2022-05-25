@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qoa0k26ff3BXU7H7+XxJyv71Liq+pP6+x8akUP5nWpJVYfljJMC7OMrl1MIw/UwJ8ijo0oSbNSrM0bZv5mMq2g==",
+  "dgSpecHash": "uoDtEfZxebA8sm7QDytZEC0ID3AiaWFyWXJS1uU1kh9Tcmm98at/EMOJv5eGtgwG42kC650WpKVyIHdZotpygg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kenan\\source\\repos\\MafiaGame\\ChatService\\ChatService.csproj",
+  "projectFilePath": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\ChatService\\ChatService.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\kenan\\source\\repos\\MafiaGame\\ChatService\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
