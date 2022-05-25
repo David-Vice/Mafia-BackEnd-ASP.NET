@@ -53,8 +53,7 @@ namespace back_end.Controllers
         [HttpPut("DistributeRoles")]
         public async Task<ActionResult> DistributeRoles(int sessionId)
         {
-            await _service.DistributeRoles(sessionId);
-            return Ok("Roles are distributed!");
+            return Ok(await _service.DistributeRoles(sessionId));
         }
     }
 }

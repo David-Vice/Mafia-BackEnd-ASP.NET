@@ -31,16 +31,11 @@
       "DisplayName": "back-end",
       "ColorIndex": 4
     },
-    "600ab548-bfcf-44c0-b549-8787db8977f0": {
-      "ProjectGuid": "600ab548-bfcf-44c0-b549-8787db8977f0",
-      "DisplayName": "ToDoListApi",
-      "ColorIndex": 5
-    },
     "b184bff7-e9ca-4eb8-a510-51a9bf4a12b7": {
       "ProjectGuid": "b184bff7-e9ca-4eb8-a510-51a9bf4a12b7",
       "DisplayName": "ChatService",
-      "ColorIndex": 6
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 6
 }
