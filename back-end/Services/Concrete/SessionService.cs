@@ -25,7 +25,7 @@ namespace back_end.Services.Concrete
             var session = await _dataContext.Sessions.FindAsync(id);
             if (session == null)
             {
-                throw new NullReferenceException();
+                return null;
             }
 
             return session;
