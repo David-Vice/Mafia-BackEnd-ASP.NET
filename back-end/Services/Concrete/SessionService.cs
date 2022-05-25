@@ -110,6 +110,11 @@ namespace back_end.Services.Concrete
             if (session == null) throw new NullReferenceException();
             session.NumberOfPlayers--;
             if (session.NumberOfPlayers < 0) return false;
+            else if (session.NumberOfPlayers == 0)
+            {
+                await EndSession(id);
+                return true;
+            }
             await _dataContext.SaveChangesAsync();
             return true;
         }
