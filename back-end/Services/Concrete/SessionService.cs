@@ -12,10 +12,12 @@ namespace back_end.Services.Concrete
     public class SessionService : ISessionService
     {
         private readonly IDataContext _dataContext;
+        private readonly IGameSessionsUsersRoleService _gsurService;
 
-        public SessionService(IDataContext dataContext)
+        public SessionService(IDataContext dataContext, IGameSessionsUsersRoleService gsurService)
         {
             _dataContext = dataContext;
+            _gsurService = gsurService;
         }
 
         public async Task<Session> Get(int id)
@@ -38,9 +40,10 @@ namespace back_end.Services.Concrete
                 session.StartTime = DateTime.Now;
                 session.RoleAutoInitialize = 1;
                 session.MaxNumberOfPlayers = 20;
-                session.NumberOfPlayers = 1; // only admin
+                session.NumberOfPlayers = 0; // only admin
                 _dataContext.Sessions?.Add(session);
                 await _dataContext.SaveChangesAsync();
+                await IncrementNumberOfPlayers(session.Id, session.AdminId);
                 return session.Id;
             }
             else
@@ -94,13 +97,19 @@ namespace back_end.Services.Concrete
             return activeSessions;
         }
 
-        public async Task<bool> IncrementNumberOfPlayers(int id)
+        public async Task<bool> IncrementNumberOfPlayers(int id, int userId)
         {
             Session sessionToUpdate = await _dataContext.Sessions.FindAsync(id);
             if (sessionToUpdate == null) throw new NullReferenceException();
             sessionToUpdate.NumberOfPlayers++;
             if (sessionToUpdate.NumberOfPlayers > sessionToUpdate.MaxNumberOfPlayers) return false;
             await _dataContext.SaveChangesAsync();
+            GameSessionsUsersRole gsur = new GameSessionsUsersRole();
+            gsur.UserId = userId;
+            gsur.SessionId = id;
+            gsur.RoleId = 3;
+            gsur.PlayerIngameStatusId = 1;
+            await _gsurService.Add(gsur);
             return true;
         }
 
