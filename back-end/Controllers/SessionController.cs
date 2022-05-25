@@ -44,6 +44,17 @@ namespace back_end.Controllers
             return Ok(await _service.GetOpenSessions());
         }
 
+        [HttpGet("GetAdmin/{id}")]
+        public async Task<ActionResult> GetAdminIdBySessionId(int id)
+        {
+            Session session = await _service.Get(id);
+            if (session==null)
+            {
+                return BadRequest("wrong session id");
+            }
+            return Ok(session.AdminId);
+        }
+
         #endregion
 
 
