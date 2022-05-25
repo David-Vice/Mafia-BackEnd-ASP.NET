@@ -93,5 +93,25 @@ namespace back_end.Services.Concrete
             List<Session> activeSessions = allSessions.Select(s => s).Where(s=>s.EndTime==null).ToList();
             return activeSessions;
         }
+
+        public async Task<bool> IncrementNumberOfPlayers(int id)
+        {
+            Session sessionToUpdate = await _dataContext.Sessions.FindAsync(id);
+            if (sessionToUpdate == null) throw new NullReferenceException();
+            sessionToUpdate.NumberOfPlayers++;
+            if (sessionToUpdate.NumberOfPlayers > sessionToUpdate.MaxNumberOfPlayers) return false;
+            await _dataContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DecrementNumberOfPlayers(int id)
+        {
+            Session session = await _dataContext.Sessions.FindAsync(id);
+            if (session == null) throw new NullReferenceException();
+            session.NumberOfPlayers--;
+            if (session.NumberOfPlayers < 0) return false;
+            await _dataContext.SaveChangesAsync();
+            return true;
+        }
     }
 }
