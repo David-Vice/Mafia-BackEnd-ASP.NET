@@ -29,9 +29,9 @@ namespace back_end.Services.Concrete
             return session;
         }
 
-        public async Task Add(Session session)
+        public async Task<int> Add(Session session)
         {
-            if (session.NumberOfPlayers <= session.MaxNumberOfPlayers && session != null)
+            if (session != null)
             {
                 session.Admin=_dataContext.Users.Where(x=>x.Id==session.AdminId).FirstOrDefault();
                 //session.GameSessionsUsersRoles=_dataContext.GameSessionsUsersRoles.Where(x=>x.SessionId==session.Id).ToList();
@@ -41,6 +41,11 @@ namespace back_end.Services.Concrete
                 session.NumberOfPlayers = 1; // only admin
                 _dataContext.Sessions?.Add(session);
                 await _dataContext.SaveChangesAsync();
+                return session.Id;
+            }
+            else
+            {
+                return -1;
             }
         }
 
@@ -85,7 +90,7 @@ namespace back_end.Services.Concrete
         public async Task<IEnumerable<Session>> GetOpenSessions()
         {
             IEnumerable<Session> allSessions = await GetAll();
-            List<Session> activeSessions = allSessions.Select(s => s).Where(s => s.StartTime.Equals(s.EndTime) || s.EndTime==null).ToList();
+            List<Session> activeSessions = allSessions.Select(s => s).Where(s=>s.EndTime==null).ToList();
             return activeSessions;
         }
     }

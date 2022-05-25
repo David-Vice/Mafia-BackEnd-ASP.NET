@@ -53,8 +53,13 @@ namespace back_end.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateSession(Session session)
         {
-            await _service.Add(session);
-            return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + session.Id, session);
+            int val=await _service.Add(session);
+            if (val < 0)
+            {
+                return BadRequest("Error");
+            }
+            return Ok(val);
+           // return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + session.Id, session);
         }
 
         #endregion

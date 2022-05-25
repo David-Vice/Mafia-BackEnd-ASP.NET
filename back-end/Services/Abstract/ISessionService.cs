@@ -9,7 +9,7 @@ namespace back_end.Services.Abstract
         Task<Session> Get(int id);
         Task<IEnumerable<Session>> GetOpenSessions();
         Task<IEnumerable<Session>> GetAll();
-        Task Add(Session session);
+        Task<int> Add(Session session);
         Task Delete(int id);
         Task EndSession(int id);
     }
