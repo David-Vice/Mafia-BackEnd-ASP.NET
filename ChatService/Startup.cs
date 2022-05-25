@@ -17,7 +17,10 @@ namespace ChatService
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR();
+            services.AddSignalR(e =>
+            {
+                e.MaximumReceiveMessageSize = 102400000;
+            });
             services.AddCors();
             //services.AddCors(options =>
             //{
