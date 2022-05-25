@@ -88,6 +88,25 @@ namespace back_end.Controllers
             return Ok();
         }
 
+        [HttpPut("PlayerJoined/{id}")]
+        public async Task<ActionResult> PlayerJoined(int id)
+        {
+            bool result = await _service.IncrementNumberOfPlayers(id);
+            if (result == false) return BadRequest();
+            return Ok();
+        }
+
+
+        [HttpPut("PlayerLeft/{id}")]
+        public async Task<ActionResult> PlayerLeft(int id)
+        {
+            bool result = await _service.DecrementNumberOfPlayers(id);
+            if (result == false) return BadRequest();
+            return Ok();
+        }
+
+
+
         #endregion
 
 
