@@ -6587,19 +6587,12 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\kenan\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {}
-=======
-    "C:\\Users\\Javid\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 36f766cfd36980d3b19a628cfdf088c75283a862
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\back-end\\back-end.csproj",
       "projectName": "back-end",
       "projectPath": "C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\back-end\\back-end.csproj",
@@ -6612,22 +6605,6 @@
       "configFilePaths": [
         "C:\\Users\\kenan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
-=======
-      "projectUniqueName": "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\back-end.csproj",
-      "projectName": "back-end",
-      "projectPath": "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\back-end.csproj",
-      "packagesPath": "C:\\Users\\Javid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\obj\\",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
-      "configFilePaths": [
-        "C:\\Users\\Javid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 36f766cfd36980d3b19a628cfdf088c75283a862
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6721,12 +6698,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
->>>>>>> 36f766cfd36980d3b19a628cfdf088c75283a862
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\kenan\\Source\\Repos\\MafiaGame\\back-end\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

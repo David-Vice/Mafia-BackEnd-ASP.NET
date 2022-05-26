@@ -42,6 +42,13 @@ namespace back_end.Controllers
             return Ok(await _service.GetUsernamesBySessionId(id));
         }
 
+        [HttpGet("GetBySessionId/{id}")]
+        public async Task<ActionResult<List<GameSessionsUsersRole>>> GetBySessionId(int id)
+        {
+            return Ok(await _service.GetBySessionId(id));
+        }
+
+
 
         [HttpPost]
         public async Task<ActionResult> CreateGameSessionsUsersRole(GameSessionsUsersRole gameSessionsUsersRole)

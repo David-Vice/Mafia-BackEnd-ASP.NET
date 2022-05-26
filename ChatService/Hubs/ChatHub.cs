@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using back_end.Models;
+using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ChatService.Hubs
@@ -14,7 +17,7 @@ namespace ChatService.Hubs
         public ChatHub(IDictionary<string,UserConnection> connections)
         {
             _connections = connections;
-            _botUser = "MyChat Bot";
+            _botUser = "Mafia Bot";
         }
 
         public override Task OnDisconnectedAsync(Exception exception)
@@ -46,6 +49,34 @@ namespace ChatService.Hubs
             await SendConnectedUsers(userConnection.Room);
         }
         
+        public async Task InformRoleDistribution(int sessionId)
+        {
+            HttpClient client = new HttpClient();
+
+            HttpResponseMessage response = await client.GetAsync($"https://localhost:44313/api/GameSessionsUsersRoles/GetBySessionId/{sessionId}");
+            string result="nothing to show";
+            if (response.IsSuccessStatusCode)
+            {
+                result = await response.Content.ReadAsStringAsync();
+            }
+            GameSessionsUsersRole myProduct = JsonConvert.DeserializeObject<GameSessionsUsersRole>(result);
+
+            await SendMessage(result);
+            //int userId = Convert.ToInt32(result[0]["id"]);
+            //response = await client.GetAsync(@$"https://localhost:44313/api/Users/{result[0][]}");
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    await response.Content.ReadAsStringAsync();
+            //}
+            //HttpResponseMessage response = await client.GetAsync($"https://localhost:44313/api/GameSessionsUsersRoles/GetBySessionId/{sessionId}");
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    await response.Content.ReadAsStringAsync();
+            //}
+
+
+        }
+
         public Task SendConnectedUsers(string room)
         {
             var users = _connections.Values

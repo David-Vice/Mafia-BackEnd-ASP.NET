@@ -46,15 +46,21 @@ namespace back_end.Services.Concrete
 
             return usernames;
         }
+        public async Task<IEnumerable<GameSessionsUsersRole>> GetBySessionId(int id)
+        {
+            IEnumerable<GameSessionsUsersRole> gameSessions = await GetAll();
+            List<GameSessionsUsersRole> gameSessionsUsersRoles = gameSessions.Where(gs => gs.SessionId.Equals(id)).ToList();
+            return gameSessionsUsersRoles;
+        }
 
         public async Task Add(GameSessionsUsersRole gsur)
         {
             if (gsur != null)
             {
-                gsur.User = _dataContext.Users.Where(x=>x.Id == gsur.UserId).FirstOrDefault();
-                gsur.Session = _dataContext.Sessions.Where(x=>x.Id == gsur.SessionId).FirstOrDefault();
-                gsur.Role = _dataContext.Roles.Where(x => x.Id == gsur.RoleId).FirstOrDefault();
-                gsur.PlayerIngameStatus = _dataContext.PlayerIngameStatuses.Where(x => x.Id == gsur.PlayerIngameStatusId).FirstOrDefault();
+                //gsur.User = _dataContext.Users.Where(x=>x.Id == gsur.UserId).FirstOrDefault();
+                //gsur.Session = _dataContext.Sessions.Where(x=>x.Id == gsur.SessionId).FirstOrDefault();
+                //gsur.Role = _dataContext.Roles.Where(x => x.Id == gsur.RoleId).FirstOrDefault();
+                //gsur.PlayerIngameStatus = _dataContext.PlayerIngameStatuses.Where(x => x.Id == gsur.PlayerIngameStatusId).FirstOrDefault();
                 _dataContext.GameSessionsUsersRoles?.Add(gsur);
                 await _dataContext.SaveChangesAsync();
             }
@@ -98,5 +104,7 @@ namespace back_end.Services.Concrete
             await _dataContext.SaveChangesAsync();
             return "Roles are distributed!";
         }
+
+      
     }
 }
