@@ -1,4 +1,4 @@
-﻿using back_end.Models;
+﻿using ChatService.Models;
 using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
 using System;
@@ -60,7 +60,7 @@ namespace ChatService.Hubs
         {
             HttpClient client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync($"https://localhost:44313/api/GameSessionsUsersRoles/GetBySessionId/{sessionId}");
+            HttpResponseMessage response = await client.GetAsync($"http://kanan02-001-site1.itempurl.com/api/GameSessionsUsersRoles/GetBySessionId/{sessionId}");
             string result="nothing to show";
             if (response.IsSuccessStatusCode)
             {
