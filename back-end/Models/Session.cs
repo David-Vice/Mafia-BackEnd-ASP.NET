@@ -17,7 +17,7 @@ namespace back_end.Models
         public DateTime StartTime { get; set; }
         public DateTime? EndTime { get; set; }
         public ulong RoleAutoInitialize { get; set; }
-        public int? AdminId { get; set; }
+        public int AdminId { get; set; }
         public int NumberOfPlayers { get; set; }
         public int MaxNumberOfPlayers { get; set; }
 

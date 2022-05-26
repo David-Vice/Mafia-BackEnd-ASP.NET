@@ -10,5 +10,6 @@ namespace back_end.Services.Abstract
         Task<List<string>> GetUsernamesBySessionId(int id);
         Task<IEnumerable<GameSessionsUsersRole>> GetAll();
         Task Add(GameSessionsUsersRole role);
+        Task<string> DistributeRoles(int sessionId);
     }
 }

@@ -44,6 +44,17 @@ namespace back_end.Controllers
             return Ok(await _service.GetOpenSessions());
         }
 
+        [HttpGet("GetAdmin/{id}")]
+        public async Task<ActionResult> GetAdminIdBySessionId(int id)
+        {
+            Session session = await _service.Get(id);
+            if (session==null)
+            {
+                return BadRequest("wrong session id");
+            }
+            return Ok(session.AdminId);
+        }
+
         #endregion
 
 
@@ -89,9 +100,9 @@ namespace back_end.Controllers
         }
 
         [HttpPut("PlayerJoined/{id}")]
-        public async Task<ActionResult> PlayerJoined(int id)
+        public async Task<ActionResult> PlayerJoined(int id, int userId)
         {
-            bool result = await _service.IncrementNumberOfPlayers(id);
+            bool result = await _service.IncrementNumberOfPlayers(id,userId);
             if (result == false) return BadRequest();
             return Ok();
         }

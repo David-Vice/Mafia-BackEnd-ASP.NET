@@ -12,7 +12,7 @@ namespace back_end.Services.Abstract
         Task<int> Add(Session session);
         Task Delete(int id);
         Task EndSession(int id);
-        Task<bool> IncrementNumberOfPlayers(int id);
+        Task<bool> IncrementNumberOfPlayers(int id, int userId);
         Task<bool> DecrementNumberOfPlayers(int id);
     }
 }
