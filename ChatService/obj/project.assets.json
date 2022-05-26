@@ -48,31 +48,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kenan\\.nuget\\packages\\": {},
+    "C:\\Users\\Javid\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kenan\\source\\MafiaProject\\back-end\\ChatService\\ChatService.csproj",
+      "projectUniqueName": "C:\\Users\\Javid\\source\\repos\\back-end\\ChatService\\ChatService.csproj",
       "projectName": "ChatService",
-      "projectPath": "C:\\Users\\Kenan\\source\\MafiaProject\\back-end\\ChatService\\ChatService.csproj",
-      "packagesPath": "C:\\Users\\Kenan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kenan\\source\\MafiaProject\\back-end\\ChatService\\obj\\",
+      "projectPath": "C:\\Users\\Javid\\source\\repos\\back-end\\ChatService\\ChatService.csproj",
+      "packagesPath": "C:\\Users\\Javid\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Javid\\source\\repos\\back-end\\ChatService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Kenan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Javid\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -85,7 +82,15 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+<<<<<<< HEAD
+          "projectReferences": {
+            "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\back-end.csproj": {
+              "projectPath": "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\back-end.csproj"
+            }
+          }
+=======
           "projectReferences": {}
+>>>>>>> f69af33160138720515468b5ac47ea81c8339845
         }
       },
       "warningProperties": {
@@ -121,7 +126,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },
