@@ -62,5 +62,11 @@ namespace back_end.Controllers
         {
             return Ok(await _service.DistributeRoles(sessionId));
         }
+
+        [HttpPut("Kill")]
+        public async Task<ActionResult> Kill(int sessionId, int userId)
+        {
+            return Ok(await _service.Kill(sessionId, userId));
+        }
     }
 }

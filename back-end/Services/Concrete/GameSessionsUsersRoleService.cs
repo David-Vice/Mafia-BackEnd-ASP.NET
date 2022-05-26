@@ -12,10 +12,12 @@ namespace back_end.Services.Concrete
     public class GameSessionsUsersRoleService : IGameSessionsUsersRoleService
     {
         private readonly IUserService _userService;
+        private readonly IRoleService _roleService;
         private readonly IDataContext _dataContext;
-        public GameSessionsUsersRoleService(IUserService userService, IDataContext dataContext)
+        public GameSessionsUsersRoleService(IUserService userService, IDataContext dataContext, IRoleService roleService)
         {
             _userService = userService;
+            _roleService = roleService;
             _dataContext = dataContext;
         }
 
@@ -88,12 +90,13 @@ namespace back_end.Services.Concrete
             Random rand = new Random();
             List<GameSessionsUsersRole> shuffledGameSessionsUsersRole = gameSessionsUsersRoles.OrderBy(_ => rand.Next()).ToList();
 
-            shuffledGameSessionsUsersRole[0].RoleId = 4;
-            for (int i = 1; i < 1+mafiaCount; i++)
+            if (gameSessionsUsersRoles.Count >= 1) shuffledGameSessionsUsersRole[0].RoleId = 10;
+            if(gameSessionsUsersRoles.Count>=2) shuffledGameSessionsUsersRole[1].RoleId = 4;
+            for (int i = 2; i < 2+mafiaCount; i++)
             {
                 shuffledGameSessionsUsersRole[i].RoleId = 2;
             }
-            for(int i = 1+mafiaCount; i<shuffledGameSessionsUsersRole.Count; i++)
+            for(int i = 2+mafiaCount; i<shuffledGameSessionsUsersRole.Count; i++)
             {
                 shuffledGameSessionsUsersRole[i].RoleId = 1;
             }
@@ -105,6 +108,15 @@ namespace back_end.Services.Concrete
             return "Roles are distributed!";
         }
 
-      
+        public async Task<string> Kill(int sessionId,int userId)
+        {
+            IEnumerable<GameSessionsUsersRole> gameSessions = await GetBySessionId(sessionId);
+            GameSessionsUsersRole gsur = gameSessions.FirstOrDefault(gs => gs.SessionId.Equals(sessionId) && gs.UserId.Equals(userId));
+            gsur.PlayerIngameStatusId = 3;
+            _dataContext.GameSessionsUsersRoles?.Update(gsur);
+            await _dataContext.SaveChangesAsync();
+            Role role = await _roleService.Get(gsur.RoleId);
+            return $"{role.Role1} is dead!";
+        }
     }
 }

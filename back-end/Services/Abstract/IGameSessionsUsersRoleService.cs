@@ -12,5 +12,6 @@ namespace back_end.Services.Abstract
         Task Add(GameSessionsUsersRole role);
         Task<string> DistributeRoles(int sessionId);
         Task<IEnumerable<GameSessionsUsersRole>> GetBySessionId(int id);
+        Task<string> Kill(int sessionId, int userId);
     }
 }
