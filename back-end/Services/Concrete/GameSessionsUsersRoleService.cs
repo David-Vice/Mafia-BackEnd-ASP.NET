@@ -71,8 +71,8 @@ namespace back_end.Services.Concrete
             int mafiaCount = 0;
             IEnumerable<GameSessionsUsersRole> gameSessions = await GetAll();
             List<GameSessionsUsersRole> gameSessionsUsersRoles = gameSessions.Where(gs => gs.SessionId.Equals(sessionId)).ToList();
-            if (gameSessionsUsersRoles.Count < 5)
-                return "Minimum 5 players required to start the game!";
+           // if (gameSessionsUsersRoles.Count < 5)
+            //    return "Minimum 5 players required to start the game!";
             if(5<=gameSessionsUsersRoles.Count && gameSessionsUsersRoles.Count<=7)
             {
                 mafiaCount = 1;

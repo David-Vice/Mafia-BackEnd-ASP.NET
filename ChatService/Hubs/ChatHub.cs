@@ -31,13 +31,20 @@ namespace ChatService.Hubs
             }
             return base.OnDisconnectedAsync(exception);
         }
-
+        
         public async Task SendMessage(string message)
         {
             if (_connections.TryGetValue(Context.ConnectionId,out UserConnection userConnection))
             {
                 await Clients.Group(userConnection.Room).SendAsync("ReceiveMessage", userConnection.User, message);
 
+            }
+        }
+        public async Task SendUsersRoles(List<GameSessionsUsersRole> usersRoles)
+        {
+            if (_connections.TryGetValue(Context.ConnectionId, out UserConnection userConnection))
+            {
+                await Clients.Group(userConnection.Room).SendAsync("ReceiveUsersRoles",_botUser, usersRoles);
             }
         }
         public async Task JoinRoom(UserConnection userConnection )
@@ -59,9 +66,9 @@ namespace ChatService.Hubs
             {
                 result = await response.Content.ReadAsStringAsync();
             }
-            GameSessionsUsersRole myProduct = JsonConvert.DeserializeObject<GameSessionsUsersRole>(result);
+            List<GameSessionsUsersRole> myProduct = JsonConvert.DeserializeObject<List<GameSessionsUsersRole>>(result);
 
-            await SendMessage(result);
+            await SendUsersRoles(myProduct);
             //int userId = Convert.ToInt32(result[0]["id"]);
             //response = await client.GetAsync(@$"https://localhost:44313/api/Users/{result[0][]}");
             //if (response.IsSuccessStatusCode)
