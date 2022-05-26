@@ -30,7 +30,6 @@ C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Microsof
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Microsoft.OpenApi.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\MySqlConnector.dll
-C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Newtonsoft.Json.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -233,3 +232,16 @@ C:\Users\Mame_ym86\Source\Repos\back-end\back-end\obj\Release\net5.0\back-end.pd
 C:\Users\Mame_ym86\Source\Repos\back-end\back-end\obj\Release\net5.0\back-end.genruntimeconfig.cache
 C:\Users\Mame_ym86\Source\Repos\back-end\back-end\obj\Release\net5.0\ref\back-end.dll
 C:\Users\kenan\source\repos\MafiaGame\back-end\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\DevExpress.Data.v21.2.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\DevExpress.Xpo.v21.2.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\System.ServiceModel.Http.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\System.ServiceModel.NetTcp.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\System.ServiceModel.Primitives.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\System.ServiceModel.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\System.ServiceModel.Security.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\runtimes\unix\lib\netstandard2.0\System.Private.ServiceModel.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Private.ServiceModel.dll
+C:\Users\Kenan\source\MafiaProject\back-end\back-end\bin\Release\net5.0\Microsoft.IdentityModel.Abstractions.dll

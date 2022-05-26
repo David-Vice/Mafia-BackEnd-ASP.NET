@@ -4,6 +4,7 @@
     "C:\\Users\\Javid\\source\\repos\\back-end\\ChatService\\ChatService.csproj": {}
   },
   "projects": {
+<<<<<<< HEAD
     "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\back-end.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -123,6 +124,9 @@
       }
     },
     "C:\\Users\\Javid\\source\\repos\\back-end\\ChatService\\ChatService.csproj": {
+=======
+    "C:\\Users\\Kenan\\source\\MafiaProject\\back-end\\ChatService\\ChatService.csproj": {
+>>>>>>> f69af33160138720515468b5ac47ea81c8339845
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\Javid\\source\\repos\\back-end\\ChatService\\ChatService.csproj",
@@ -152,11 +156,15 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
+<<<<<<< HEAD
             "projectReferences": {
               "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\back-end.csproj": {
                 "projectPath": "C:\\Users\\Javid\\source\\repos\\back-end\\back-end\\back-end.csproj"
               }
             }
+=======
+            "projectReferences": {}
+>>>>>>> f69af33160138720515468b5ac47ea81c8339845
           }
         },
         "warningProperties": {

@@ -1,9 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "C87YIjQ/49poWaex+2n43gMTzWLBH1ifTv4VCaVz90EdjW2sfTWBvqmKq/2xEyNrnTNTUiFpL5inaWG3iz/87Q==",
+=======
+  "dgSpecHash": "Y/oUel0tm7nsAt7/+Cneofsa7MwtO6mFfWeHdhBSU/HQ37WjPnpG0aksrXNt7N2e2umYH2fqY2X4FnsNspPP6w==",
+>>>>>>> f69af33160138720515468b5ac47ea81c8339845
   "success": true,
   "projectFilePath": "C:\\Users\\Javid\\source\\repos\\back-end\\ChatService\\ChatService.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\Javid\\.nuget\\packages\\devexpress.data\\21.2.5\\devexpress.data.21.2.5.nupkg.sha512",
     "C:\\Users\\Javid\\.nuget\\packages\\devexpress.xpo\\21.2.5\\devexpress.xpo.21.2.5.nupkg.sha512",
     "C:\\Users\\Javid\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
@@ -122,6 +127,9 @@
     "C:\\Users\\Javid\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Javid\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Javid\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+=======
+    "C:\\Users\\Kenan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+>>>>>>> f69af33160138720515468b5ac47ea81c8339845
   ],
   "logs": []
 }
